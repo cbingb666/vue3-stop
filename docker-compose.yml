@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  stop:
+    image: 'stop'
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8848:80
