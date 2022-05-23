@@ -18,7 +18,6 @@ module.exports = {
   ],
 
   rules: {
-    'prettier/prettier': 'error',
     // override/add rules settings here, such as:
   },
 };

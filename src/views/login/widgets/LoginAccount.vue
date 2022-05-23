@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from "vue";
+import { reactive } from 'vue';
 
 type IForm = {
   username: string;
@@ -7,12 +7,12 @@ type IForm = {
 };
 
 const form = reactive<IForm>({
-  username: "",
-  password: "",
+  username: '',
+  password: '',
 });
 
 const onClickLogin = () => {
-  console.log("login");
+  console.log('login');
 };
 </script>
 
@@ -33,12 +33,7 @@ const onClickLogin = () => {
       />
     </van-cell-group>
     <div :class="$style['form-bottom']">
-      <van-button
-        type="primary"
-        block
-        round
-        @click="onClickLogin"
-      >
+      <van-button type="primary" block round @click="onClickLogin">
         登录
       </van-button>
     </div>
