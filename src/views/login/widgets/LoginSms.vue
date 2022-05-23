@@ -1,11 +1,5 @@
-<script lang="ts">
-export default {
-  name: "sms",
-};
-</script>
-
 <script setup lang="ts">
-import { reactive, ref } from "vue";
+import { reactive } from "vue";
 
 type IForm = {
   phone: string;
@@ -17,7 +11,9 @@ const form = reactive<IForm>({
   code: "",
 });
 
-const onClickLogin = () => {};
+const onClickLogin = () => {
+  console.log("login");
+};
 </script>
 
 <template>
@@ -28,17 +24,22 @@ const onClickLogin = () => {};
         label="手机号"
         name="phone"
         placeholder="phone"
-      ></van-field>
+      />
       <van-field
         v-model="form.code"
         label="短信验证码"
         name="code"
         placeholder="code"
-      ></van-field>
+      />
     </van-cell-group>
     <div :class="$style['form-bottom']">
-      <van-button type="primary" block round @click="onClickLogin"
-        >登录
+      <van-button
+        type="primary"
+        block
+        round
+        @click="onClickLogin"
+      >
+        登录
       </van-button>
     </div>
   </van-form>

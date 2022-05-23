@@ -1,11 +1,5 @@
-<script lang="ts">
-export default {
-  name: "account",
-};
-</script>
-
 <script setup lang="ts">
-import { reactive, ref } from "vue";
+import { reactive } from "vue";
 
 type IForm = {
   username: string;
@@ -17,7 +11,9 @@ const form = reactive<IForm>({
   password: "",
 });
 
-const onClickLogin = () => {};
+const onClickLogin = () => {
+  console.log("login");
+};
 </script>
 
 <template>
@@ -28,17 +24,22 @@ const onClickLogin = () => {};
         label="用户名"
         name="username"
         placeholder="username"
-      ></van-field>
+      />
       <van-field
         v-model="form.password"
         label="密码"
         name="password"
         placeholder="password"
-      ></van-field>
+      />
     </van-cell-group>
     <div :class="$style['form-bottom']">
-      <van-button type="primary" block round @click="onClickLogin"
-        >登录
+      <van-button
+        type="primary"
+        block
+        round
+        @click="onClickLogin"
+      >
+        登录
       </van-button>
     </div>
   </van-form>

@@ -1,8 +1,8 @@
 version: '3.9'
 
 services:
-  stop:
-    image: 'stop'
+  vue3-stop:
+    image: 'vue3-stop'
     build:
       context: .
       dockerfile: ./Dockerfile

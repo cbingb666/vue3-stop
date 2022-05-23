@@ -1,30 +1,27 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
-import accountLoginVue from "./widgets/account.login.vue";
-import smsLoginVue from "./widgets/sms.login.vue";
-
+import LoginAccountVue from "./widgets/LoginAccount.vue";
+import LoginSmsVue from "./widgets/LoginSms.vue";
 const loginWays = reactive({
-  account: accountLoginVue,
-  sms: smsLoginVue,
+  account: LoginAccountVue,
+  sms: LoginSmsVue,
 });
 const backgroundColor = ref("skyblue");
-// const loginWay = ref(LoginWays.account);
-
-console.log(accountLoginVue);
 </script>
 
 <template>
   <div :class="$style['wrapper']">
     <van-tabs :class="$style['custom-tabs']">
-      <van-tab v-for="way in loginWays" :title="way.name">
+      <van-tab
+        v-for="way in loginWays"
+        :key="way.name"
+        :title="way.name"
+      >
         <div :class="$style['tab-wrapper']">
-          <component :is="way"></component>
+          <component :is="way" />
         </div>
       </van-tab>
     </van-tabs>
-    <!-- <div :class="$style['title']">{{  }}</div> -->
-    <!-- <component :is="loginWay"></component> -->
-    <!-- <account-login-vue></account-login-vue> -->
   </div>
 </template>
 
