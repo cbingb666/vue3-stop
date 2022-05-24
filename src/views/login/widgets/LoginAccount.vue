@@ -1,19 +1,28 @@
-<script setup lang="ts">
-import { reactive } from 'vue';
-
-type IForm = {
+<script lang="ts">
+export default {
+  title: '账号登录',
+};
+export type LoginAccountForm = {
   username: string;
   password: string;
 };
+</script>
 
-const form = reactive<IForm>({
+<script setup lang="ts">
+import { reactive } from 'vue';
+
+type Emits = {
+  (e: 'login', form: LoginAccountForm): void;
+};
+
+const props = defineProps<{
+  //
+}>();
+const emit = defineEmits<Emits>();
+const form = reactive<LoginAccountForm>({
   username: '',
   password: '',
 });
-
-const onClickLogin = () => {
-  console.log('login');
-};
 </script>
 
 <template>
@@ -33,7 +42,7 @@ const onClickLogin = () => {
       />
     </van-cell-group>
     <div :class="$style['form-bottom']">
-      <van-button type="primary" block round @click="onClickLogin">
+      <van-button type="primary" block round @click="() => emit('login', form)">
         登录
       </van-button>
     </div>

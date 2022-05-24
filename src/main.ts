@@ -1,8 +1,9 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import { router } from './router';
-import '@/styles/reset.scss';
+import { applyRouter } from './router';
+import '@/styles/global.scss';
+import 'virtual:svg-icons-register';
 
 const app = createApp(App);
-app.use(router);
+applyRouter(app);
 app.mount('#app');

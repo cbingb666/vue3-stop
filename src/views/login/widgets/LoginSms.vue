@@ -1,12 +1,17 @@
-<script setup lang="ts">
-import { reactive } from 'vue';
-
-type IForm = {
+<script lang="ts">
+export default {
+  title: '短信登录',
+};
+export type LoginSmsForm = {
   phone: string;
   code: string;
 };
+</script>
 
-const form = reactive<IForm>({
+<script setup lang="ts">
+import { reactive } from 'vue';
+
+const form = reactive<LoginSmsForm>({
   phone: '',
   code: '',
 });

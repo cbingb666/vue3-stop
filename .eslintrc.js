@@ -18,6 +18,7 @@ module.exports = {
   ],
 
   rules: {
+    '@typescript-eslint/no-namespace': 'off',
     // override/add rules settings here, such as:
   },
 };

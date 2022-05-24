@@ -1,14 +1,16 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-// import HelloWorld from "@/components/HelloWorld.vue";
-// import { Button } from "vant";
+import { ref } from 'vue';
+import type { ConfigProviderProps } from 'vant';
+
+const configProviderProps = ref<ConfigProviderProps>({
+  tag: 'div',
+});
 </script>
 
 <template>
-  <!-- <img alt="Vue logo" src="@/assets/logo.png" /> -->
-  <!-- <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
-  <router-view />
+  <van-config-provider v-bind="configProviderProps">
+    <router-view />
+  </van-config-provider>
 </template>
 
 <style>
